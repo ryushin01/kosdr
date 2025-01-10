@@ -1,3 +1,7 @@
+/*
+  NOTE: 이 파일은 컴포넌트 개발 가이드를 위해 작성된 샘플 컴포넌트 파일입니다.
+*/
+
 type GuideButtonProps = {
   type?: "button" | "submit" | "reset";
   shape: "solid" | "outline";

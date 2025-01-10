@@ -78,6 +78,11 @@ pnpm run dev
 >
 > IntelliJ - 설정 - 도구 - 저장 시 액션 - `코드 서식 다시 지정` 체크 활성화
 
+> **주석 태그 활용**
+>
+> IntelliJ - 기본 설정 - 설정 - 에디터 - 할일 목록 - 추가 - `NOTE` 패턴 입력 - `색 구성표 TODO 디폴트 색상 사용` 체크 비활성화 - 전경 헥스코드 영역 클릭 - `00a8ff` 헥스
+> 코드 입력 후 선택 - 확인 - 적용 - 확인
+
 ### ![My Skills](https://skillicons.dev/icons?i=vscode)
 
 > **ESLint**
