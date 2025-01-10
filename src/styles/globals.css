@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 초기화 레이어 */
+@layer base {
+}
+
+/* 컴포넌트 레이어 */
+@layer components {
+}
+
+/* 유틸리티 레이어 */
+@layer utilities {
+}
