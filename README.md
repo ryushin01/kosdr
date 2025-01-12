@@ -2,6 +2,12 @@
 
 ***TODO***: 20250113
 
+- Gitlab Merge Request Pipeline Stuck
+    - https://jost-do-it.tistory.com/entry/Gitlab-CICD%EC%97%90%EC%84%9C-Merge-Request-%EC%8B%9C-CIPIPELINESOURCE%EA%B0%80-push%EB%A1%9C-%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94-%EC%9D%B4%EC%9C%A0
+    - https://saramin.github.io/2021-11-09-gitlab-runner
+    - https://workshop.infograb.io/gitlab-ci/22_configure_gitlab_ci_pipeline/5_run_and_test/
+    - https://tofusand-dev.tistory.com/150
+    - https://gitlab-docs.infograb.net/ee/ci/pipelines/merge_request_pipelines.html
 - Axios 공통 모듈 개발 > ref interceptor 파일 참조
     - 기본 모듈
     - 요청 시 인증 토근 추가 모듈
