@@ -1,22 +1,25 @@
+import { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { TITLE, DESCRIPTION, FAVICON, OG_IMAGE } from "@constants/metadata";
 import "@styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "KOSDR :: 신협 전자등기 프로젝트",
-  description: "신협 전자등기 프로젝트",
+  title: TITLE,
+  description: DESCRIPTION,
   icons: {
-    icon: "/logo.svg",
+    icon: FAVICON,
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    images: OG_IMAGE,
+    siteName: TITLE,
+    type: "website",
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
+    images: OG_IMAGE,
   },
 };
 
@@ -30,14 +33,25 @@ export const viewport: Viewport = {
 export default function RootLayout({
                                      children,
                                    }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="ko">
-    <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
+    <head>
+      <link
+        rel="stylesheet"
+        as="style"
+        crossOrigin="anonymous"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+      />
+    </head>
+    <body>
     {children}
+    {/*children 형제 레벨로 Toast 컴포넌트 설계 필요 */}
+    {/*<Toast />*/}
+
+    {/*Modal*/}
+    <div id="portal" />
     </body>
     </html>
   );

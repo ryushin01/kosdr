@@ -4,6 +4,10 @@
 
 /* 초기화 레이어 */
 @layer base {
+    html,
+    body {
+        font-family: 'pretendard', system-ui, Arial, sans-serif;
+    }
 }
 
 /* 컴포넌트 레이어 */
