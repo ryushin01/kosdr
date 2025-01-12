@@ -8,6 +8,8 @@
     - https://workshop.infograb.io/gitlab-ci/22_configure_gitlab_ci_pipeline/5_run_and_test/
     - https://tofusand-dev.tistory.com/150
     - https://gitlab-docs.infograb.net/ee/ci/pipelines/merge_request_pipelines.html
+- 에러 경계(Error Boundary)
+    - https://github.com/XionWCFM/Nextjs-docs-Korean-translation/blob/main/nextjsdocs/APIReference/FileConventions/error.js.md
 - Axios 공통 모듈 개발 > ref interceptor 파일 참조
     - 기본 모듈
     - 요청 시 인증 토근 추가 모듈
