@@ -1,6 +1,6 @@
 "use client";
 
-import { Modal, ResponsiveGridSystem } from "@components/common";
+import { Modal, ResponsiveGridSystem, Typography } from "@components/common";
 
 import { useState } from "react";
 import { GuideButton } from "@components/button";
@@ -16,6 +16,10 @@ export default function Home() {
         <div>2</div>
         <div>3</div>
       </ResponsiveGridSystem>
+
+      <Typography as="p" style="title">
+        텍스트
+      </Typography>
 
       <GuideButton shape="solid" color="neutral" size="medium" onClick={() => setIsOpenedModal(true)}>오픈</GuideButton>
 
