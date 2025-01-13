@@ -1,6 +1,14 @@
-import { ResponsiveGridSystem } from "@components/common";
+"use client";
+
+import { Modal, ResponsiveGridSystem } from "@components/common";
+
+import { useState } from "react";
+import { GuideButton } from "@components/button";
 
 export default function Home() {
+
+  const [isOpenedModal, setIsOpenedModal] = useState(false);
+
   return (
     <div>
       <ResponsiveGridSystem mobile={1} tablet={2} desktop={3}>
@@ -8,6 +16,14 @@ export default function Home() {
         <div>2</div>
         <div>3</div>
       </ResponsiveGridSystem>
+
+      <GuideButton shape="solid" color="neutral" size="medium" onClick={() => setIsOpenedModal(true)}>오픈</GuideButton>
+
+      {isOpenedModal &&
+        <Modal>
+          <div>modal</div>
+        </Modal>
+      }
     </div>
   );
 }

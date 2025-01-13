@@ -12,6 +12,17 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      zIndex: {
+        // NOTE: Design System > Elevation
+        // 1: portal
+        "1": "1",
+        // 10: modal container
+        "10": "10",
+        // 100: modal backdrop
+        "100": "100",
+        // 1000: tooltip
+        "1000": "1000",
+      },
     },
   },
   plugins: [],

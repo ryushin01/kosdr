@@ -12,6 +12,18 @@
 
 /* 컴포넌트 레이어 */
 @layer components {
+    /* modal component */
+    #portal {
+        @apply relative z-1;
+    }
+
+    ._modal-backdrop {
+        @apply fixed inset-0 z-100 bg-black/70;
+    }
+
+    ._modal-container {
+        @apply fixed inset-20 z-10 bg-white;
+    }
 }
 
 /* 유틸리티 레이어 */

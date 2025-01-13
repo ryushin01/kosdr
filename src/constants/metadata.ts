@@ -1,4 +1,4 @@
-export const TITLE = "KOSDR :: 신협 전자등기 프로젝트";
+export const TITLE = "KOSER STANDARD :: 신협 전자등기 프로젝트";
 
 export const DESCRIPTION = "신협 전자등기 프로젝트";
 
