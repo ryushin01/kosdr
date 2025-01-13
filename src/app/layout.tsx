@@ -46,7 +46,9 @@ export default function RootLayout({
       />
     </head>
     <body>
-    {children}
+    <div id="app">
+      {children}
+    </div>
     {/*children 형제 레벨로 Toast 컴포넌트 설계 필요 */}
     {/*<Toast />*/}
     <div id="portal" />

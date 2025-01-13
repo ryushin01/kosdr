@@ -10,7 +10,7 @@ export default function Home() {
   const [isOpenedModal, setIsOpenedModal] = useState(false);
 
   return (
-    <div>
+    <>
       <ResponsiveGridSystem mobile={1} tablet={2} desktop={3}>
         <div>1</div>
         <div>2</div>
@@ -24,6 +24,6 @@ export default function Home() {
           <div>modal</div>
         </Modal>
       }
-    </div>
+    </>
   );
 }
