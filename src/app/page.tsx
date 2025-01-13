@@ -1,22 +1,13 @@
-"use client";
-
-import { GuideButton } from "@components/button";
+import { ResponsiveGridSystem } from "@components/common";
 
 export default function Home() {
-  const handleClick = () => {
-    console.log("클릭");
-  };
-
   return (
     <div>
-      <GuideButton
-        shape="solid"
-        color="neutral"
-        size="medium"
-        onClick={handleClick}
-      >
-        테스트 버튼
-      </GuideButton>
+      <ResponsiveGridSystem mobile={1} tablet={2} desktop={3}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </ResponsiveGridSystem>
     </div>
   );
 }
