@@ -17,7 +17,7 @@ export default function Home() {
         <div>3</div>
       </ResponsiveGridSystem>
 
-      <Typography as="p" style="title">
+      <Typography as="h1" kind="title" isBold={true}>
         텍스트
       </Typography>
 
