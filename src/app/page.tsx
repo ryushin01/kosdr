@@ -1,33 +1,19 @@
-"use client";
+import { getHomeData } from "@services/home";
 
-import { Modal, ResponsiveGridSystem, Typography } from "@components/common";
+interface homeDataProps {
+  id: number;
+  title: string;
+}
 
-import { useState } from "react";
-import { GuideButton } from "@components/button";
-
-export default function Home() {
-
-  const [isOpenedModal, setIsOpenedModal] = useState(false);
+export default async function Home() {
+  const { data: homeData } = await getHomeData();
 
   return (
-    <>
-      <ResponsiveGridSystem mobile={1} tablet={2} desktop={3}>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-      </ResponsiveGridSystem>
-
-      <Typography as="h1" kind="title" isBold={true}>
-        텍스트
-      </Typography>
-
-      <GuideButton shape="solid" color="neutral" size="medium" onClick={() => setIsOpenedModal(true)}>오픈</GuideButton>
-
-      {isOpenedModal &&
-        <Modal>
-          <div>modal</div>
-        </Modal>
-      }
-    </>
+    <ul>
+      {homeData.map((item: homeDataProps) => {
+        const { id, title } = item;
+        return (<li key={id}>{title}</li>);
+      })}
+    </ul>
   );
 }
