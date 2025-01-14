@@ -5,3 +5,7 @@ export const createAxiosInstance = axios.create({
   baseURL: baseURL,
   withCredentials: true,
 });
+
+// headers: {
+//   Authorization: `Bearer ${token}`,
+// },
