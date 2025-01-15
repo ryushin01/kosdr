@@ -1,1 +1,5 @@
-export const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+export const appURI = process.env.NEXT_PUBLIC_APP_URI;
+
+export const adminURI = process.env.NEXT_PUBLIC_ADMIN_URI;
+
+export const apiURI = process.env.NEXT_PUBLIC_API_URI;

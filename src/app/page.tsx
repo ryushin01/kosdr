@@ -1,30 +1,34 @@
-import { getUserListData, getUserData } from "@services/home";
-
-interface userListDataProps {
-  id: number;
-  email: string;
-  "first_name": string;
-  "last_name": string;
-}
+import { getAirlineData, getPassengerListData, postAirlineData } from "@services/main";
 
 export default async function Home() {
-  const sampleId = 10;
-  const { data: userListData } = await getUserListData();
-  const { data: userData } = await getUserData(sampleId);
+  const sampleId = "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19";
+  const { data: airlineData } = await getAirlineData(sampleId);
 
-  console.log(userData?.data);
+  const { data: passengerListData } = await getPassengerListData({
+    page: 1,
+    size: 10,
+  });
+
+  const sampleObj = {
+    _id: "000",
+    name: "한국항공",
+    country: "대한민국",
+    logo: "",
+    slogan: "",
+    head_quarters: "서울",
+    website: "",
+    established: "2025",
+  };
+
+  const { data: addedAirlineData } = await postAirlineData(sampleObj);
+
+  console.log(airlineData);
+  console.log(passengerListData);
+  console.log(addedAirlineData);
 
   return (
     <>
-      <ul className="flex flex-col gap-10">
-        {userListData?.data.map((user: userListDataProps) => {
-          const { id, email, first_name, last_name } = user;
-          return (<li key={id}>
-            <div>{first_name} {last_name}</div>
-            <div>{email}</div>
-          </li>);
-        })}
-      </ul>
+      page
     </>
   );
 }

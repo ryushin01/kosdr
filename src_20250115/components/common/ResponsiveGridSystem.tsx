@@ -14,6 +14,13 @@ type ResponsiveGridSystemProps = {
  * @property {number} desktop       - 데스크탑 해상도(min-width: 1280px)에서 n개 화면 분할
  */
 
+// ResponsiveGridSystem Guideline
+// <ResponsiveGridSystem mobile={1} tablet={2} desktop={3}>
+//   <div>1</div>
+//   <div>2</div>
+//   <div>3</div>
+// </ResponsiveGridSystem>;
+
 export default function ResponsiveGridSystem({
                                                mobile,
                                                tablet,

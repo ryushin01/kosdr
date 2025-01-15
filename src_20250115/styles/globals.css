@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 초기화 레이어 */
+@layer base {
+    html,
+    body,
+    #app {
+        min-height: 100vh;
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    html,
+    body {
+        font-family: 'pretendard', system-ui, Arial, sans-serif;
+    }
+}
+
+/* 컴포넌트 레이어 */
+@layer components {
+    /* common mixin */
+    ._flex-center {
+        @apply flex items-center justify-center;
+    }
+
+    ._position-center {
+        @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+
+    /* modal component */
+    #portal {
+        @apply relative z-1;
+    }
+
+    ._modal-backdrop {
+        @apply fixed inset-0 z-100 bg-black/70;
+    }
+
+    ._modal-container {
+        @apply fixed inset-20 z-10 bg-white;
+    }
+}
+
+/* 유틸리티 레이어 */
+@layer utilities {
+}
