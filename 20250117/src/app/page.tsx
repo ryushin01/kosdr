@@ -27,8 +27,8 @@ export default async function Home() {
   console.log(addedAirlineData);
 
   return (
-    <main>
-      <div>main</div>
-    </main>
+    <>
+      page
+    </>
   );
 }

@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { TITLE, DESCRIPTION, FAVICON, OG_IMAGE } from "@constants/metadata";
-import { Header } from "@components/layout";
 import "@styles/globals.css";
 
 export const metadata: Metadata = {
@@ -48,10 +47,8 @@ export default function RootLayout({
     </head>
     <body>
     <div id="app">
-      <Header />
       {children}
     </div>
-
     {/*children 형제 레벨로 Toast 컴포넌트 설계 필요 */}
     {/*<Toast />*/}
     <div id="portal" />

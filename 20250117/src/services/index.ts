@@ -15,7 +15,7 @@ export const axiosBasicInstance = axios.create({
 // 요청 인터셉터
 axiosBasicInstance.interceptors.request.use(
   function(config) {
-    // 요청 전 작업: 토큰 주입 등
+    // 요청 전 작업: 토근 주입 등
     return config;
   },
   function(error) {

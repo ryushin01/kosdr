@@ -4,6 +4,10 @@
 
 /* 초기화 레이어 */
 @layer base {
+    #app {
+        @apply flex flex-col
+    }
+
     html,
     body,
     #app {
@@ -15,6 +19,27 @@
     html,
     body {
         font-family: 'pretendard', system-ui, Arial, sans-serif;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    /* 임시 스타일링 */
+    header {
+        background-color: #c0392b;
+    }
+
+    nav {
+        background-color: #f1c40f;
+    }
+
+    main {
+        background-color: #00a8ff;
+    }
+
+    footer {
+        background-color: #16a085;
     }
 }
 
@@ -29,6 +54,32 @@
         @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
     }
 
+    /* layout component */
+    ._header {
+        @apply sticky top-0 z-10
+    }
+
+    ._gnb {
+        @apply fixed top-0 left-0 bottom-0 z-1
+    }
+
+    ._main-wrapper {
+        @apply flex flex-col flex-1
+    }
+
+    ._footer {
+        @apply relative z-10 text-center;
+    }
+
+    /* datepicker component */
+    ._datepicker {
+        @apply flex relative;
+
+        img {
+            @apply absolute top-0 right-0
+        }
+    }
+
     /* modal component */
     #portal {
         @apply relative z-1;
@@ -41,8 +92,88 @@
     ._modal-container {
         @apply fixed inset-20 z-10 bg-white;
     }
+
+    /* responsive table styling */
+    ._responsive-table {
+        @apply table-fixed w-full border-collapse text-center;
+
+        th,
+        td {
+            @apply align-middle;
+
+            span {
+                @apply align-middle;
+            }
+        }
+
+        th {
+            @apply bg-koser-grayscale-50;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        ._responsive-table._col-5-type {
+            tr {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+
+                th:last-child,
+                td:last-child {
+                    grid-column: 1 / span 2;
+                }
+            }
+        }
+
+        ._responsive-table._col-6-type {
+            tr {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+
+                ._line-breaking {
+                    display: block;
+                }
+            }
+        }
+
+        ._responsive-table._col-8-type {
+            tr {
+                display: grid;
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+
+                th:first-child,
+                td:first-child {
+                    display: none;
+                }
+
+                th:nth-child(2),
+                td:nth-child(2),
+                th:nth-child(3),
+                td:nth-child(3),
+                th:nth-child(4),
+                td:nth-child(4) {
+                    grid-column: auto / span 2;
+                }
+
+                th:nth-child(5),
+                td:nth-child(5),
+                th:nth-child(6),
+                td:nth-child(6),
+                th:nth-child(7),
+                td:nth-child(7),
+                th:nth-child(8),
+                td:nth-child(8) {
+                    grid-column: auto / span 3;
+                }
+            }
+        }
+    }
 }
 
 /* 유틸리티 레이어 */
 @layer utilities {
 }
+
+/* 강제 스타일링 */
+/*.react-datepicker-popper {*/
+/*    transform: translate(0, 0) !important;*/
+/*}*/

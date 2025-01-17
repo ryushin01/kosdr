@@ -55,9 +55,9 @@ export default {
       },
       zIndex: {
         // NOTE: Design System > Elevation
-        // 1: portal, gnb
+        // 1: portal
         "1": "1",
-        // 10: header, footer, modal container
+        // 10: modal container
         "10": "10",
         // 100: modal backdrop
         "100": "100",

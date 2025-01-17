@@ -1,12 +1,12 @@
-// import { adminURI } from "@constants/env";
+import { adminURI } from "@constants/env";
 import { axiosBasicInstance } from "@services";
 
 // GET
 export const getAirlinesListData = () => axiosBasicInstance.get("/airlines");
 
 // GET with param
-export const getAirlineData = (id: string) => axiosBasicInstance.get(`/airlines/${id}`);
-// export const getAirlineData = (id: string) => axiosBasicInstance.get(`/airlines/${id}`, { baseURL: adminURI });
+// export const getAirlineData = (id: string) => axiosBasicInstance.get(`/airlines/${id}`);
+export const getAirlineData = (id: string) => axiosBasicInstance.get(`/airlines/${id}`, { baseURL: adminURI });
 
 // GET with multiple params
 export const getPassengerListData = ({
