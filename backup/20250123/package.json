@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4000 --experimental-https",
+    "dev": "next dev --experimental-https",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,10 +16,8 @@
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-datepicker": "^7.6.0",
-    "react-device-detect": "^2.2.3",
     "react-dom": "^19.0.0",
-    "react-error-boundary": "^5.0.0",
-    "swiper": "^11.2.1"
+    "react-error-boundary": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

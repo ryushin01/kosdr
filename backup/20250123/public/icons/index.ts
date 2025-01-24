@@ -6,7 +6,6 @@
 import SampleIcon14 from "@icons/14/sampleIcon14.svg";
 import SampleIcon20 from "@icons/20/sampleIcon20.svg";
 import SampleIcon24 from "@icons/24/sampleIcon24.svg";
-import SampleIcon32 from "@icons/32/sampleIcon32.svg";
 import SampleIcon36 from "@icons/36/sampleIcon36.svg";
 
 // 임시 아이콘
@@ -16,7 +15,6 @@ export {
   SampleIcon14,
   SampleIcon20,
   SampleIcon24,
-  SampleIcon32,
   SampleIcon36,
 
   // 임시 아이콘

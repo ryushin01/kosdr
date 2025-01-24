@@ -4,7 +4,7 @@ export default function useDatePicker() {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
-  const handleDatesPicker = (dates: [Date | null, Date | null]) => {
+  const handleDatePickers = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
     setStartDate(start);
     setEndDate(end);
@@ -19,5 +19,7 @@ export default function useDatePicker() {
     setEndDate(null);
   };
 
-  return { startDate, endDate, handleDatePicker, handleDatesPicker, reset };
+  console.log("3depth", startDate);
+
+  return { startDate, endDate, handleDatePickers, handleDatePicker, reset };
 }

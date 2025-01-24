@@ -5,7 +5,7 @@
 /* 초기화 레이어 */
 @layer base {
     #app {
-        @apply flex flex-col;
+        @apply flex flex-col
     }
 
     html,
@@ -18,14 +18,14 @@
 
     html,
     body {
-        font-family: "pretendard", system-ui, Arial, sans-serif;
+        font-family: 'pretendard', system-ui, Arial, sans-serif;
     }
 
     main {
         flex: 1;
     }
 
-    /* TODO: 임시값 삭제 */
+    /* 임시 스타일링 */
     header {
         background-color: #c0392b;
     }
@@ -56,19 +56,15 @@
 
     /* layout component */
     ._header {
-        @apply sticky top-0 z-10;
+        @apply sticky top-0 z-10
     }
 
     ._gnb {
-        @apply fixed top-0 left-0 bottom-0 z-1;
-
-        ._selected {
-            @apply bg-koser-primary-100 text-koser-grayscale-0;
-        }
+        @apply fixed top-0 left-0 bottom-0 z-1
     }
 
     ._main-wrapper {
-        @apply flex flex-col flex-1;
+        @apply flex flex-col flex-1
     }
 
     ._footer {
@@ -78,26 +74,10 @@
     /* datepicker component */
     ._datepicker {
         @apply flex relative;
-        /* TODO: 임시값 삭제 */
-        height: 50px;
-        border: 5px #00a8ff solid;
 
-        .react-datepicker-wrapper {
-            @apply w-full h-full;
-
-            .react-datepicker__input-container {
-                @apply flex items-center gap-2 w-full h-full;
-
-                input {
-                    @apply flex w-full h-full px-8
-                }
-            }
+        img {
+            @apply absolute top-0 right-0
         }
-    }
-
-    /* input component */
-    ._textInput {
-        @apply flex border text-[15px] p-2;
     }
 
     /* modal component */
@@ -186,59 +166,6 @@
                 }
             }
         }
-    }
-
-    /* swiper component */
-    ._swiper {
-        @apply w-full;
-
-        /* TODO: 임시값 삭제 */
-        height: 500px;
-
-        .swiper-slide {
-            /* TODO: 임시값 삭제 */
-            width: 90%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .swiper-pagination {
-            /* TODO: 임시값 삭제 */
-            top: auto !important;
-            bottom: 0 !important;
-            height: 20px !important;
-            color: rgba(255, 255, 255, 1);
-        }
-
-        ._btn-prev,
-        ._btn-next {
-            /* TODO: 임시값 삭제 */
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            width: 100px;
-            height: 100px;
-            background-color: rgba(0, 0, 0, 1);
-            color: rgba(255, 255, 255, 1);
-
-            &[disabled] {
-                opacity: 0.5;
-            }
-        }
-
-        ._btn-prev {
-            /* TODO: 임시값 삭제 */
-            left: 0;
-        }
-
-        ._btn-next {
-            /* TODO: 임시값 삭제 */
-            right: 0;
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-
     }
 }
 

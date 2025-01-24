@@ -1,4 +1,4 @@
-import DatePicker from "@components/common/DatePicker";
+import DatePicker from "@components/common/DataPicker";
 import Modal from "@components/common/Modal";
 import ResponsiveGridSystem from "@components/common/ResponsiveGridSystem";
 import Select from "@components/common/Select";
