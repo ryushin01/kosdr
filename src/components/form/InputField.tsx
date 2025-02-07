@@ -8,7 +8,7 @@ type InputFieldProps = {
   labelText?: string;
   isFocus?: boolean;
   isError?: boolean;
-  type?: "text" | "password" | "search" | "tel";
+  type?: "text" | "password" | "tel";
   shape?: "lg" | "xl";
   disabled?: boolean;
   required?: boolean;
@@ -22,7 +22,9 @@ type InputFieldProps = {
 };
 
 /**
- * InputField props
+ * @name InputField
+ * @version 1.0.0
+ * @author 홍다인 <hdi0104@bankle.co.kr>
  * @property {string} htmlFor      - 인풋 id와 매치 시키는 라벨 속성을 정의합니다.
  * @property {string} labelText    - 라벨의 텍스트 내용을 정의합니다.
  * @property {boolean} isFocus     - 라벨의 포커스 여부를 정의합니다.
@@ -37,7 +39,6 @@ type InputFieldProps = {
  * @property {string} name         - 인풋의 이름을 정의합니다.
  * @property {string} inputMessage - 포커스 또는 에러시 인풋 하단 텍스트 내용을 정의합니다.
  */
-
 export default function InputField({
   htmlFor,
   labelText,

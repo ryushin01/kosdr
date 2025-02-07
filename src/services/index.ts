@@ -2,7 +2,9 @@ import axios from "axios";
 import { appURI } from "@constants/env";
 
 /**
- * axiosBasicInstance
+ * @name axiosBasicInstance
+ * @version 1.0.0
+ * @author 류창선 <zero.ryushin@bankle.co.kr>
  * @description       Axios Instance의 기본형으로, 공통 또는 사용 빈도가 높은 config 옵션 값 적용
  * @baseURL           요청에 사용될 서버 URL 옵션
  * @withCredentials   요청 headers 안에 cookie 포함 가능 처리 옵션
@@ -50,9 +52,9 @@ axiosBasicInstance.interceptors.response.use(
           console.log("Forbidden: 클라이언트가 콘텐츠에 접근할 권한을 가지고 있지 않을 경우");
           return new Promise(() => {
           });
-        // No Acceptable: HTTP headers의 content-type이 부적절한 경우
+        // Error Acceptable: HTTP headers의 content-type이 부적절한 경우
         case 406:
-          console.log("No Acceptable: HTTP headers의 content-type이 부적절한 경우");
+          console.log("Error Acceptable: HTTP headers의 content-type이 부적절한 경우");
           return new Promise(() => {
           });
         // Request Timeout: 요청에 응답하는 시간이 오래 걸리는 경우

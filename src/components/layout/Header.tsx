@@ -1,3 +1,8 @@
+/**
+ * @name Header
+ * @version 1.0.0
+ * @author 류창선 <zero.ryushin@bankle.co.kr>
+ */
 export default function Header() {
   return (
     <header className="_header">

@@ -12,19 +12,20 @@ type DatePickerProps = {
 };
 
 /**
- * date picker props
- * @description 부모 컴포넌트가 클라이언트 컴포넌트이어야 합니다.  -
+ * @name DatePicker
+ * @version 1.0.0
+ * @author 류창선 <zero.ryushin@bankle.co.kr>
+ * @description 부모 컴포넌트가 클라이언트 컴포넌트이어야 합니다.
  * @property {Date} startDate               - 선택된 날짜(시작일)
  * @property {Date} endDate                 - 선택된 날짜(마감일)
  * @property {function} handleDatePicker    - 날짜 선택 함수(단일)
  * @property {function} handleDatesPicker   - 날짜 선택 함수(복합)
  * @property {boolean} isMultiComponent     - 단일 또는 복합 컴포넌트 구분(복합 컴포넌트는 단일 컴포넌트와 다르게 selectsRange, endDate props가 추가되며, 날짜 선택 함수가 다릅니다.
  */
-
-export default function DualDataPicker({
-                                         startDate, endDate, handleDatePicker, handleDatesPicker,
-                                         isMultiComponent = false,
-                                       }: DatePickerProps) {
+export default function DatePicker({
+                                     startDate, endDate, handleDatePicker, handleDatesPicker,
+                                     isMultiComponent = false,
+                                   }: DatePickerProps) {
   return (
     <>
       <div className="_datepicker">

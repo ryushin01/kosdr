@@ -4,7 +4,7 @@ import { ChangeEvent } from "react";
 
 type InputProps = {
   id?: string;
-  type?: "text" | "password" | "search" | "tel";
+  type?: "text" | "password" | "tel";
   shape?: "lg" | "xl";
   required?: boolean;
   disabled?: boolean;
@@ -20,7 +20,9 @@ type InputProps = {
 };
 
 /**
- * Input props
+ * @name Input
+ * @version 1.0.0
+ * @author 홍다인 <hdi0104@bankle.co.kr>
  * @property {string} id           - 인풋 id를 정의합니다.
  * @property {string} type         - 인풋 타입을 정의합니다.
  * @property {string} shape        - 인풋의 쉐입을 정의합니다.
@@ -35,7 +37,6 @@ type InputProps = {
  * @property {string} name         - 인풋의 이름을 정의합니다.
  * @property {string} value        - 인풋에 입력된 값을 정의합니다.
  */
-
 export default function Input({
   id,
   type = "tel",

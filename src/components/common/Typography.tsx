@@ -8,12 +8,13 @@ interface TypographyProps {
 }
 
 /**
- * Typography props
+ * @name Typography
+ * @version 1.0.0
+ * @author 류창선 <zero.ryushin@bankle.co.kr>
  * @property {ElementType} as        - 태그 설정(기본값: span)
  * @property {boolean} isBold        - 텍스트 볼드 처리 유무(기본값: false)
  * @property {string} kind           - 타이포그래피 종류
  */
-
 const Typography = ({ as = "span", isBold = false, kind, children }: TypographyProps) => {
   const As = as;
   const typography: { [key: string]: string } = {

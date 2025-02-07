@@ -6,6 +6,7 @@ import {
   Form,
   InputField,
   InputMessage,
+  SearchInput,
 } from "@/components/form";
 import { useState } from "react";
 
@@ -31,6 +32,10 @@ export default function FormComponent() {
     console.log(e.target.value);
     // setValue(e.target.value);
     setIsFocus2(false);
+  };
+
+  const handleClick = () => {
+    console.log("검색버튼 클릭");
   };
   return (
     <main>
@@ -70,7 +75,19 @@ export default function FormComponent() {
           inputMessage="최소 한 글자 이상 작성해 주세요"
           value={value}
         />
-        <button type="submit">클릭</button>
+        {/* <button type="submit">클릭</button> */}
+
+        <div>3</div>
+        <SearchInput
+          name="test1"
+          shape="xl"
+          isFocus={isFocus2}
+          onFocus={() => setIsFocus2(true)}
+          onChange={(e) => setValue2(e.target.value)}
+          onClick={handleClick}
+          onBlur={handleBlur2}
+          value={value2}
+        />
       </Form>
     </main>
   );

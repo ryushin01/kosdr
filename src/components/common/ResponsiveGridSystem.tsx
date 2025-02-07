@@ -8,12 +8,13 @@ type ResponsiveGridSystemProps = {
 };
 
 /**
- * ResponsiveGridSystem props
+ * @name ResponsiveGridSystem
+ * @version 1.0.0
+ * @author 류창선 <zero.ryushin@bankle.co.kr>
  * @property {number} mobile        - 모바일 해상도(max-width: 767px)에서 n개 화면 분할
  * @property {number} tablet        - 태블릿 해상도(min-width: 768px)에서 n개 화면 분할
  * @property {number} desktop       - 데스크탑 해상도(min-width: 1280px)에서 n개 화면 분할
  */
-
 export default function ResponsiveGridSystem({
                                                mobile,
                                                tablet,

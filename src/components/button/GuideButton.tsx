@@ -13,7 +13,9 @@ type GuideButtonProps = {
 };
 
 /**
- * GuideButton props
+ * @name GuideButton
+ * @version 1.0.0
+ * @author 류창선 <zero.ryushin@bankle.co.kr>
  * @property {string} type        - 버튼 타입을 정의합니다.
  * @property {string} shape       - 버튼 형태를 정의합니다.
  * @property {string} color       - 버튼 색상을 정의합니다.
@@ -22,7 +24,6 @@ type GuideButtonProps = {
  * @property {function} onClick   - 버튼 클릭 시 실행할 함수를 위해 미리 정의합니다.
  * @property {boolean} disabled   - 버튼의 비활성화 상태를 정의합니다.
  */
-
 export default function GuideButton({
                                       type = "button",
                                       shape,
