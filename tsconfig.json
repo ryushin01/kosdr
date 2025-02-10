@@ -36,6 +36,9 @@
       "@images": [
         "public/images"
       ],
+      "@images/*": [
+        "public/images/*"
+      ],
       "@/*": [
         "src/*"
       ],

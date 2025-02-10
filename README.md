@@ -1,6 +1,6 @@
 # 신협 전자등기 프로젝트
 
-> 개발 후 반드시 lint 실행(`pnpm lint`)을 통해 `Error ESLint warnings or errors` 문구 출력이 확인된 상태에서 소스 코드를 저장소로 올립니다.
+> 개발 후 반드시 lint 실행(`pnpm lint`)을 통해 `Error1 ESLint warnings or errors` 문구 출력이 확인된 상태에서 소스 코드를 저장소로 올립니다.
 ***
 
 ## 시작 가이드

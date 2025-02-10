@@ -63,7 +63,7 @@ export default {
         "100": "100",
         // 1000: tooltip, toast
         "1000": "1000",
-        // 10000: loading
+        // 10000: loading, spinner-backdrop
         "10000": "10000",
       },
     },
