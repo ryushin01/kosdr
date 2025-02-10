@@ -1,5 +1,3 @@
-"use client";
-
 import { CustomErrorBoundary } from "@components/error-boundary";
 
 export default function BasicErrorBoundaryPage() {

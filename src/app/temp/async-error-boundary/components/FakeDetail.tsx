@@ -26,7 +26,7 @@ const FakeDetail = ({ fakeDetailData }: FakeDetailProps) => {
       {price}
       {description}
       {category}
-      {rating}
+      {/*{rating}*/}
     </>
   );
 };
