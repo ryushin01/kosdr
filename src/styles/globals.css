@@ -275,6 +275,11 @@
             }
         }
     }
+
+    /* nextjs-toast-errors-parent 미노출 처리 */
+    nextjs-portal {
+        display: none;
+    }
 }
 
 /* 유틸리티 레이어 */
