@@ -1,6 +1,6 @@
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes } from "react";
 import Image from "next/image";
-import { SampleIcon14 } from "@icons";
+import { searchIcon } from "@icons";
 
 type SearchInputProps = {
   shape?: "lg" | "xl";
@@ -49,9 +49,9 @@ export default function SearchInput({
   isFocus,
   ...props
 }: SearchInputProps) {
-  const className = `_textInput ${
+  const className = `_withIconLabel _textInput ${
     shape === "lg" ? "rounded-lg" : "rounded-3xl"
-  } bg-koser-grayscale-0 w-[200px] ${
+  } bg-koser-grayscale-0 ${
     isFocus ? "border-koser-primary-80" : "border-koser-grayscale-40"
   }`;
 
@@ -70,8 +70,7 @@ export default function SearchInput({
         {...props}
       />
       <button onClick={onClick} type="button">
-        {/* TODO : 검색아이콘으로 변경 */}
-        {<Image src={SampleIcon14} alt="검색 아이콘" width={14} height={14} />}
+        {<Image src={searchIcon} alt="검색 아이콘" width={20} height={20} />}
       </button>
     </label>
   );

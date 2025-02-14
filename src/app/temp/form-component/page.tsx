@@ -9,13 +9,15 @@ import {
   InputMessage,
   SearchInput,
 } from "@/components/form";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export default function FormComponent() {
   const [value, setValue] = useState("");
   const [value2, setValue2] = useState("");
+  const [value3, setValue3] = useState("");
   const [isFocus, setIsFocus] = useState(false);
   const [isFocus2, setIsFocus2] = useState(false);
+  const [isFocus3, setIsFocus3] = useState(false);
 
   const handleSubmit = () => {
     console.log("value", value);
@@ -24,26 +26,37 @@ export default function FormComponent() {
     setValue2("");
   };
 
-  const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLFormElement>) => {
     console.log(e.target.value);
-    // setValue2(e.target.value);
-    setIsFocus(false);
   };
-  const handleBlur2 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-    // setValue(e.target.value);
-    setIsFocus2(false);
-  };
+
+  // const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   console.log(e.target.value);
+  //   // setValue2(e.target.value);
+  //   setIsFocus(false);
+  // };
+  // const handleBlur2 = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   // console.log(e.target.value);
+  //   // setValue(e.target.value);
+  //   setIsFocus2(false);
+  // };
+  // const handleBlur3 = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   console.log(e.target.value);
+  //   // setValue(e.target.value);
+  //   setIsFocus3(false);
+  // };
 
   const handleClick = () => {
     console.log("검색버튼 클릭");
   };
+
   return (
     <main>
       <Form
         onSubmit={handleSubmit}
         legendText="인풋테스트"
         isHiddenLegend={false}
+        onChange={(e) => handleChange(e)}
       >
         <div>1</div>
         <Label>
@@ -54,7 +67,7 @@ export default function FormComponent() {
             isFocus={isFocus2}
             onFocus={() => setIsFocus2(true)}
             onChange={(e) => setValue2(e.target.value)}
-            onBlur={handleBlur2}
+            // onBlur={handleBlur2}
             value={value2}
           />
         </Label>
@@ -74,7 +87,7 @@ export default function FormComponent() {
           disabled={false}
           onFocus={() => setIsFocus(true)}
           onChange={(e) => setValue(e.target.value)}
-          onBlur={handleBlur}
+          // onBlur={handleBlur}
           placeholder="텍스트 입력"
           name="test2"
           inputMessage="최소 한 글자 이상 작성해 주세요"
@@ -90,7 +103,7 @@ export default function FormComponent() {
           onFocus={() => setIsFocus2(true)}
           onChange={(e) => setValue2(e.target.value)}
           onClick={handleClick}
-          onBlur={handleBlur2}
+          // onBlur={handleBlur2}
           value={value2}
         />
 
@@ -104,6 +117,24 @@ export default function FormComponent() {
         >
           텍스트 버튼
         </TextButton>
+
+        <div>5</div>
+        <InputField
+          htmlFor=""
+          type="password"
+          // labelText={"test2"}
+          isError={false}
+          isFocus={isFocus3}
+          required={false}
+          disabled={false}
+          onFocus={() => setIsFocus3(true)}
+          onChange={(e) => setValue3(e.target.value)}
+          // onBlur={handleBlur3}
+          placeholder="텍스트 입력"
+          name="test3"
+          // inputMessage="최소 한 글자 이상 작성해 주세요"
+          value={value3}
+        />
       </Form>
     </main>
   );

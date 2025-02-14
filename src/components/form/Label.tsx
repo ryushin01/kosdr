@@ -5,6 +5,7 @@ type LabelProps = {
   labelText?: string;
   children?: ReactNode;
   required?: boolean;
+  isPassword?: boolean;
 };
 
 /**
@@ -17,22 +18,24 @@ type LabelProps = {
  * @property {boolean} required    - 라벨에 필수 표시 여부를 정의합니다.
  */
 export default function Label({
-                                htmlFor,
-                                labelText,
-                                children,
-                                required,
-                              }: LabelProps) {
+  htmlFor,
+  labelText,
+  isPassword,
+  children,
+  required,
+}: LabelProps) {
+  const labelStyle = isPassword ? "_withIconLabel" : "";
   return (
     <div>
       {!htmlFor ? (
-        <label>
+        <label className={labelStyle}>
           {labelText}
           {required && <span>*</span>}
           {children}
         </label>
       ) : (
         <>
-          <label htmlFor={htmlFor}>
+          <label htmlFor={htmlFor} className={labelStyle}>
             {labelText}
             {required && <span>*</span>}
           </label>

@@ -1,7 +1,9 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import Label from "./Label";
 import Input from "./Input";
 import InputMessage from "./InputMessage";
+import Image from "next/image";
+import { openEyeIcon, closedEyeIcon } from "@icons";
 
 type InputFieldProps = {
   htmlFor?: string;
@@ -12,13 +14,14 @@ type InputFieldProps = {
   shape?: "lg" | "xl";
   disabled?: boolean;
   required?: boolean;
+  onClick?: () => void;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onFocus?: () => void;
   onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   name: string;
   value: string;
-  inputMessage: string;
+  inputMessage?: string;
 };
 
 /**
@@ -54,9 +57,57 @@ export default function InputField({
   placeholder,
   name,
   value,
-  inputMessage,
+  inputMessage = "",
 }: InputFieldProps) {
-  return (
+  const [isHideText, setIsHideText] = useState(true);
+
+  return type === "password" ? (
+    <>
+      <Label
+        htmlFor={htmlFor}
+        required={required}
+        labelText={labelText}
+        isPassword={true}
+      >
+        <Input
+          id={htmlFor}
+          type={isHideText ? "password" : "text"}
+          placeholder={placeholder}
+          disabled={disabled}
+          required={required}
+          name={name}
+          shape={shape}
+          isError={isError}
+          isFocus={isFocus}
+          onChange={onChange}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          value={value}
+        />
+        <button
+          onClick={() => {
+            setIsHideText(!isHideText);
+          }}
+          type="button"
+          className="_flex-center"
+        >
+          {
+            <Image
+              src={isHideText ? closedEyeIcon : openEyeIcon}
+              alt={isHideText ? "눈감은 아이콘" : "눈뜬 아이콘"}
+              width={20}
+              height={20}
+            />
+          }
+        </button>
+      </Label>
+      {(isError || isFocus) && (
+        <InputMessage isError={isError} isFocus={isFocus}>
+          {inputMessage}
+        </InputMessage>
+      )}
+    </>
+  ) : (
     <Label htmlFor={htmlFor} required={required} labelText={labelText}>
       <Input
         id={htmlFor}

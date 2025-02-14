@@ -10,17 +10,16 @@ type InputMessageProps = {
  * @author 홍다인 <hdi0104@bankle.co.kr>
  */
 export default function InputMessage({
-                                       isError,
-                                       isFocus,
-                                       children,
-                                     }: InputMessageProps) {
-  console.log({ isError, isFocus });
+  isError,
+  isFocus,
+  children,
+}: InputMessageProps) {
   const textStyle = `text-[15px] ${
     isError
       ? "text-koser-secondary-red-50"
       : isFocus
-        ? "text-koser-primary-80"
-        : ""
+      ? "text-koser-primary-80"
+      : ""
   }`;
   return <span className={textStyle}>{children}</span>;
 }
