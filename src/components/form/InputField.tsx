@@ -20,7 +20,7 @@ type InputFieldProps = {
   onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   name: string;
-  value: string;
+  defaultValue: string;
   inputMessage?: string;
 };
 
@@ -43,22 +43,22 @@ type InputFieldProps = {
  * @property {string} inputMessage - 포커스 또는 에러시 인풋 하단 텍스트 내용을 정의합니다.
  */
 export default function InputField({
-  htmlFor,
-  labelText,
-  isFocus,
-  isError,
-  type,
-  shape,
-  required,
-  disabled,
-  onChange,
-  onFocus,
-  onBlur,
-  placeholder,
-  name,
-  value,
-  inputMessage = "",
-}: InputFieldProps) {
+                                     htmlFor,
+                                     labelText,
+                                     isFocus,
+                                     isError,
+                                     type,
+                                     shape,
+                                     required,
+                                     disabled,
+                                     onChange,
+                                     onFocus,
+                                     onBlur,
+                                     placeholder,
+                                     name,
+                                     defaultValue,
+                                     inputMessage = "",
+                                   }: InputFieldProps) {
   const [isHideText, setIsHideText] = useState(true);
 
   return type === "password" ? (
@@ -82,7 +82,7 @@ export default function InputField({
           onChange={onChange}
           onBlur={onBlur}
           onFocus={onFocus}
-          value={value}
+          defaultValue={defaultValue}
         />
         <button
           onClick={() => {
@@ -122,7 +122,7 @@ export default function InputField({
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
-        value={value}
+        defaultValue={defaultValue}
       />
       {(isError || isFocus) && (
         <InputMessage isError={isError} isFocus={isFocus}>

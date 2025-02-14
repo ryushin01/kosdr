@@ -13,7 +13,7 @@ type SearchInputProps = {
   placeholder?: string;
   isFocus?: boolean;
   name: string;
-  value: string;
+  defaultValue: string;
 } & Omit<
   DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
   "className"
@@ -32,23 +32,23 @@ type SearchInputProps = {
  * @property {string} placeholder  - 인풋의 힌트 텍스트를 정의합니다.
  * @property {boolean} isFocus     - 인풋의 포커스 상태를 정의합니다.
  * @property {string} name         - 인풋의 이름을 정의합니다.
- * @property {string} value        - 인풋에 입력된 값을 정의합니다.
+ * @property {string} defaultValue        - 인풋에 입력된 값을 정의합니다.
  * @property {function} onClick    - 버튼 클릭시 동작을 위해 정의합니다.
  */
 
 export default function SearchInput({
-  shape = "lg",
-  required = false,
-  disabled,
-  onClick,
-  onChange,
-  onBlur,
-  placeholder = "입력해 주세요.",
-  name,
-  value,
-  isFocus,
-  ...props
-}: SearchInputProps) {
+                                      shape = "lg",
+                                      required = false,
+                                      disabled,
+                                      onClick,
+                                      onChange,
+                                      onBlur,
+                                      placeholder = "입력해 주세요.",
+                                      name,
+                                      defaultValue,
+                                      isFocus,
+                                      ...props
+                                    }: SearchInputProps) {
   const className = `_withIconLabel _textInput ${
     shape === "lg" ? "rounded-lg" : "rounded-3xl"
   } bg-koser-grayscale-0 ${
@@ -66,7 +66,7 @@ export default function SearchInput({
         name={name}
         onChange={onChange}
         onBlur={onBlur}
-        value={value}
+        defaultValue={defaultValue}
         {...props}
       />
       <button onClick={onClick} type="button">

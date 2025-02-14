@@ -15,7 +15,7 @@ type InputProps = {
   isError?: boolean;
   isFocus?: boolean;
   name: string;
-  value: string;
+  defaultValue: string;
   //   color: "neutral" | "primary" | "secondary";
 } & Omit<
   DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -38,32 +38,32 @@ type InputProps = {
  * @property {boolean} isError     - 인풋의 에러 상태를 정의합니다.
  * @property {boolean} isFocus     - 인풋의 포커스 상태를 정의합니다.
  * @property {string} name         - 인풋의 이름을 정의합니다.
- * @property {string} value        - 인풋에 입력된 값을 정의합니다.
+ * @property {string} defaultValue        - 인풋에 입력된 값을 정의합니다.
  */
 export default function Input({
-  id,
-  type = "tel",
-  shape = "lg",
-  required = false,
-  disabled,
-  onChange,
-  onFocus,
-  onBlur,
-  placeholder = "입력해 주세요.",
-  name,
-  value,
-  isError,
-  isFocus,
-  ...props
-}: InputProps) {
+                                id,
+                                type = "tel",
+                                shape = "lg",
+                                required = false,
+                                disabled,
+                                onChange,
+                                onFocus,
+                                onBlur,
+                                placeholder = "입력해 주세요.",
+                                name,
+                                defaultValue,
+                                isError,
+                                isFocus,
+                                ...props
+                              }: InputProps) {
   const className = `_textInput ${
     shape === "lg" ? "rounded-lg" : "rounded-3xl"
   } ${
     isError
       ? "border-koser-secondary-red-50"
       : isFocus
-      ? "border-koser-primary-80"
-      : "border-koser-grayscale-40"
+        ? "border-koser-primary-80"
+        : "border-koser-grayscale-40"
   }`;
   return (
     <input
@@ -77,7 +77,7 @@ export default function Input({
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}
-      value={value}
+      defaultValue={defaultValue}
       {...props}
     />
   );
