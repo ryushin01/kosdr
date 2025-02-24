@@ -2,16 +2,15 @@
 
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
-import { IconButton, TextButton } from "@components/button";
+import { Button, IconButton } from "@components/button";
+import { Input, Label, Form, InputField, SearchInput } from "@components/form";
+import { arrowRightIcon, ArrowForwardDoubleIcon } from "@icons";
 import {
-  Input,
-  Label,
-  Form,
-  InputField,
-  InputMessage,
-  SearchInput,
-} from "@components/form";
-import { arrowRightIcon } from "@icons";
+  TEXT_INPUT,
+  CHANGE_PASSWORD_INPUT,
+  APPLICATION_NUMBER_INPUT,
+  DEBTOR_INPUT,
+} from "@constants/input";
 
 export default function FormComponent() {
   // NOTE: 1. form 안의 값들을 객체로 묶어서 저장하기 위해 각 input의 name 기준으로 key를 할당합니다.
@@ -38,6 +37,9 @@ export default function FormComponent() {
   // NOTE: 10. 마지막으로 Form의 모든 input 값을 DTO 형태로 묶어서 서버로 보냅니다.
   const handleSubmit = () => {
     console.log("formValues", formValues);
+    if (formValues.test2 === "") {
+      setIsError(true);
+    }
   };
 
   // const handleChange = (e: ChangeEvent<HTMLFormElement>) => {
@@ -51,6 +53,11 @@ export default function FormComponent() {
     console.log("텍스트버튼 클릭");
     handleSubmit();
   };
+  const clickIconBtn = () => {
+    console.log("아이콘버튼 클릭");
+  };
+
+  const [isError, setIsError] = useState(Boolean);
 
   return (
     <main>
@@ -71,11 +78,6 @@ export default function FormComponent() {
             shape="xl"
             isError={false}
           />
-          {
-            <InputMessage isError={false}>
-              최소 한 글자 이상 작성해 주세요
-            </InputMessage>
-          }
         </Label>
 
         <div>2</div>
@@ -84,15 +86,46 @@ export default function FormComponent() {
           defaultValue={formValues.test2}
           htmlFor=""
           // labelText={"test2"}
-          // isError={true}
+          isError={isError}
           required={false}
-          disabled={false}
+          // disabled={true}
           // onBlur={handleBlur}
-          placeholder="텍스트 입력"
-          inputMessage="최소 한 글자 이상 작성해 주세요"
+          placeholder={TEXT_INPUT.placeHolder}
+          inputMessage={TEXT_INPUT.labelText}
+          errorMessage={TEXT_INPUT.errorText}
         />
 
         <div>3</div>
+        <InputField
+          name="test2"
+          defaultValue={formValues.test2}
+          htmlFor=""
+          // labelText={"test2"}
+          isError={isError}
+          required={false}
+          // disabled={true}
+          // onBlur={handleBlur}
+          placeholder={APPLICATION_NUMBER_INPUT.placeHolder}
+          inputMessage={APPLICATION_NUMBER_INPUT.labelText}
+          errorMessage={APPLICATION_NUMBER_INPUT.errorText}
+        />
+
+        <div>4</div>
+        <InputField
+          name="test2"
+          defaultValue={formValues.test2}
+          htmlFor=""
+          // labelText={"test2"}
+          isError={isError}
+          required={false}
+          // disabled={true}
+          // onBlur={handleBlur}
+          placeholder={DEBTOR_INPUT.placeHolder}
+          inputMessage={DEBTOR_INPUT.labelText}
+          errorMessage={DEBTOR_INPUT.errorText}
+        />
+
+        <div>5</div>
         <SearchInput
           name="test3"
           defaultValue={formValues.test3}
@@ -100,8 +133,8 @@ export default function FormComponent() {
           // onBlur={() => setIsFocus2(false)}
         />
 
-        <div>4</div>
-        <TextButton
+        <div>6</div>
+        <Button
           shape="solid"
           size="large"
           // disabled={true}
@@ -109,28 +142,27 @@ export default function FormComponent() {
           color="primary"
         >
           텍스트 버튼
-        </TextButton>
+        </Button>
 
-        <div>5</div>
+        <div>7</div>
         <InputField
           name="test4"
           defaultValue={formValues.test4}
           htmlFor=""
           type="password"
-          isError={false}
+          // isError={true}
           required={false}
-          disabled={false}
-          placeholder="텍스트 입력"
-          inputMessage="최소 한 글자 이상 작성해 주세요"
+          // disabled={true}
+          placeholder={CHANGE_PASSWORD_INPUT.placeHolder}
         />
 
-        <div>6</div>
-        <IconButton
-          shape="none"
-          size="xsmall"
+        <div>8</div>
+        <Button
+          shape="solid"
+          size="small"
           // disabled={true}
           // onClick={handleClick}
-          color="primary"
+          color="neutral"
           icon={
             <Image
               src={arrowRightIcon.src}
@@ -139,10 +171,26 @@ export default function FormComponent() {
               height={24}
             />
           }
-          iconPosition="right"
+          iconPosition="left"
         >
           더보기
-        </IconButton>
+        </Button>
+
+        <div>9</div>
+        <IconButton
+          size="medium"
+          // color="neutral"
+          // disabled={true}
+          onClick={clickIconBtn}
+          icon={
+            <Image
+              src={ArrowForwardDoubleIcon.src}
+              alt="arrow icon"
+              width={30}
+              height={30}
+            />
+          }
+        />
       </Form>
     </main>
   );

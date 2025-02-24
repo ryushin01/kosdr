@@ -1,6 +1,7 @@
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes } from "react";
 import Image from "next/image";
 import { RadioUncheckedIcon, RadioCheckedIcon } from "@icons";
+import "@styles/radio.css";
 
 type RadioProps = {
   name: string;

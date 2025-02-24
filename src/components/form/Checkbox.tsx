@@ -1,6 +1,7 @@
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes } from "react";
 import Image from "next/image";
 import { CheckboxUncheckedIcon, CheckboxCheckedIcon } from "@icons";
+import "@styles/checkbox.css";
 
 type CheckboxProps = {
   name: string;

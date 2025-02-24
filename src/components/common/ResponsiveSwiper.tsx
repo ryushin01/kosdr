@@ -4,6 +4,7 @@ import { Controller, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "@styles/responsive-swiper.css";
 
 type ResponsiveSwiperProps = {
   className?: string;
@@ -21,7 +22,7 @@ export default function ResponsiveSwiper({
   return (
     <>
       <Swiper
-        className={`_swiper ${className}`}
+        className={`_responsive-swiper ${className}`}
         // 사용 모듈 정의
         modules={[Controller, Navigation, Pagination]}
         // swiper-wrapper 태그 정의

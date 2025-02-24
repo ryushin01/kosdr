@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { DrawerContent, DrawerFooter } from "@components/drawer";
+import "@styles/account-layer.css";
 
 type AccountLayerProps = {
   onClose: () => void;

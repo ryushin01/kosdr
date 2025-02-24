@@ -1,6 +1,8 @@
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes } from "react";
 import Image from "next/image";
 import { searchIcon } from "@icons";
+import { SEARCH_INPUT } from "@constants/input";
+import "@styles/input.css";
 
 type SearchInputProps = {
   shape?: "lg" | "xl";
@@ -10,7 +12,6 @@ type SearchInputProps = {
   onFocus?: () => void;
   onClick?: () => void;
   onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
   name: string;
   defaultValue: string;
 } & Omit<
@@ -31,7 +32,7 @@ type SearchInputProps = {
  * @property {string} placeholder  - 인풋의 힌트 텍스트를 정의합니다.
  * @property {boolean} isFocus     - 인풋의 포커스 상태를 정의합니다.
  * @property {string} name         - 인풋의 이름을 정의합니다.
- * @property {string} defaultValue        - 인풋에 입력된 값을 정의합니다.
+ * @property {string} defaultValue - 인풋에 입력된 값을 정의합니다.
  * @property {function} onClick    - 버튼 클릭시 동작을 위해 정의합니다.
  */
 
@@ -42,7 +43,6 @@ export default function SearchInput({
   onClick,
   onChange,
   onBlur,
-  placeholder = "입력해 주세요.",
   name,
   defaultValue,
   ...props
@@ -57,7 +57,7 @@ export default function SearchInput({
         type="search"
         required={required}
         disabled={disabled}
-        placeholder={placeholder}
+        placeholder={SEARCH_INPUT.placeHolder}
         className="bg-transparent outline-none"
         name={name}
         onChange={onChange}

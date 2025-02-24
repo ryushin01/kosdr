@@ -4,11 +4,11 @@ import Input from "./Input";
 import InputMessage from "./InputMessage";
 import Image from "next/image";
 import { openEyeIcon, closedEyeIcon } from "@icons";
+import ErrorMessage from "./errorMessage";
 
 type InputFieldProps = {
   htmlFor?: string;
   labelText?: string;
-  isFocus?: boolean;
   isError?: boolean;
   type?: "text" | "password" | "tel";
   shape?: "lg" | "xl";
@@ -22,6 +22,7 @@ type InputFieldProps = {
   name: string;
   defaultValue: string;
   inputMessage?: string;
+  errorMessage?: string;
 };
 
 /**
@@ -30,7 +31,6 @@ type InputFieldProps = {
  * @author 홍다인 <hdi0104@bankle.co.kr>
  * @property {string} htmlFor      - 인풋 id와 매치 시키는 라벨 속성을 정의합니다.
  * @property {string} labelText    - 라벨의 텍스트 내용을 정의합니다.
- * @property {boolean} isFocus     - 라벨의 포커스 여부를 정의합니다.
  * @property {boolean} isError     - 라벨과 인풋의 에러 상태를 정의합니다.
  * @property {string} type         - 인풋 타입을 정의합니다.
  * @property {string} shape        - 인풋의 쉐입을 정의합니다.
@@ -40,12 +40,13 @@ type InputFieldProps = {
  * @property {function} onClick    - 인풋 클릭시 실행할 함수를 위해 미리 정의합니다.
  * @property {string} placeholder  - 인풋의 힌트 텍스트를 정의합니다.
  * @property {string} name         - 인풋의 이름을 정의합니다.
- * @property {string} inputMessage - 포커스 또는 에러시 인풋 하단 텍스트 내용을 정의합니다.
+ * @property {string} inputMessage - 포커스시 인풋 하단 텍스트 내용을 정의합니다.
+ * @property {string} errorMessage - 에러시 인풋 하단 텍스트 내용을 정의합니다.
  */
 export default function InputField({
   htmlFor,
   labelText,
-  isFocus,
+  // isFocus,
   isError,
   type,
   shape,
@@ -58,6 +59,7 @@ export default function InputField({
   name,
   defaultValue,
   inputMessage = "",
+  errorMessage = "",
 }: InputFieldProps) {
   const [isHideText, setIsHideText] = useState(true);
 
@@ -77,17 +79,18 @@ export default function InputField({
           type={isHideText ? "password" : "text"}
           placeholder={placeholder}
           disabled={disabled}
+          readOnly={disabled}
           required={required}
           name={name}
           shape={shape}
           isError={isError}
-          isFocus={isFocus}
           onChange={onChange}
           onBlur={onBlur}
           onFocus={onFocus}
           defaultValue={defaultValue}
         />
         <button
+          disabled={disabled}
           onClick={() => {
             setIsHideText(!isHideText);
           }}
@@ -98,15 +101,19 @@ export default function InputField({
           {
             <Image
               src={isHideText ? closedEyeIcon : openEyeIcon}
-              alt={isHideText ? "눈감은 아이콘" : "눈뜬 아이콘"}
+              alt={isHideText ? "보기 아이콘" : "숨김 아이콘"}
               width={20}
               height={20}
             />
           }
         </button>
       </Label>
-      {isError && inputMessage && (
-        <InputMessage isError={isError}>{inputMessage}</InputMessage>
+      {isError ? (
+        <ErrorMessage>{errorMessage}</ErrorMessage>
+      ) : inputMessage ? (
+        <InputMessage>{inputMessage}</InputMessage>
+      ) : (
+        ""
       )}
     </>
   ) : (
@@ -116,18 +123,22 @@ export default function InputField({
         type={type}
         placeholder={placeholder}
         disabled={disabled}
+        readOnly={disabled}
         required={required}
         name={name}
         shape={shape}
         isError={isError}
-        isFocus={isFocus}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
         defaultValue={defaultValue}
       />
-      {inputMessage && (
-        <InputMessage isError={isError}>{inputMessage}</InputMessage>
+      {isError ? (
+        <ErrorMessage>{errorMessage}</ErrorMessage>
+      ) : inputMessage ? (
+        <InputMessage>{inputMessage}</InputMessage>
+      ) : (
+        ""
       )}
     </Label>
   );

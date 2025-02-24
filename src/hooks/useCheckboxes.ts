@@ -11,7 +11,7 @@ export default function useCheckboxes(): [string[], (checkbox: string, checked: 
   const [checkedList, setCheckedList] = useState<Array<string>>([]);
 
   // TODO: 주석 추가
-  const handleCheckboxs = useCallback(
+  const handleCheckboxes = useCallback(
     (checkbox: string, checked: boolean) => {
       if (checked) {
         setCheckedList((prev) => [...prev, checkbox]);
@@ -22,5 +22,5 @@ export default function useCheckboxes(): [string[], (checkbox: string, checked: 
     [checkedList],
   );
 
-  return [checkedList, handleCheckboxs];
+  return [checkedList, handleCheckboxes];
 }

@@ -10,7 +10,7 @@ export default function SampleCheckboxAndRadio() {
   const [isChecked, handleCheckbox] = useCheckbox();
 
   // NOTE: Checkbox 컴포넌트(다중) 사용 시 useCheckboxes 커스텀 훅을 사용합니다.
-  const [checkedList, handleCheckboxs] = useCheckboxes();
+  const [checkedList, handleCheckboxes] = useCheckboxes();
 
   // NOTE: Radio 컴포넌트 사용 시 useRadio 커스텀 훅을 사용하고, 초기값을 설정합니다.
   const [radioValue, handleRadio] = useRadio("institution");
@@ -45,7 +45,7 @@ export default function SampleCheckboxAndRadio() {
                 checked={checkedList.includes(name)}
                 disabled={disabled}
                 onChange={(event) => {
-                  handleCheckboxs(event.target.name, event.target.checked);
+                  handleCheckboxes(event.target.name, event.target.checked);
                 }}
               />
             </div>

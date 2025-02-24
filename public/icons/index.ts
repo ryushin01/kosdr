@@ -23,6 +23,10 @@ import arrowRightIcon from "@icons/temp/arrowRightIcon.svg";
 import closeCircleIcon from "@icons/temp/closeCircleIcon.svg";
 import CheckboxUncheckedIcon from "@icons/temp/checkboxUncheckedIcon.svg";
 import CheckboxCheckedIcon from "@icons/temp/checkboxCheckedIcon.svg";
+import ArrowForwardDoubleIcon from "@icons/temp/arrowForwardDoubleIcon.svg";
+import ArrowForwardIcon from "@icons/temp/arrowForwardIcon.svg";
+import ArrowBackIcon from "@icons/temp/arrowBackIcon.svg";
+import ArrowBackDoubleIcon from "@icons/temp/arrowBackDoubleIcon.svg";
 
 export {
   SampleIcon14,
@@ -45,4 +49,8 @@ export {
   closeCircleIcon,
   CheckboxUncheckedIcon,
   CheckboxCheckedIcon,
+  ArrowForwardDoubleIcon,
+  ArrowForwardIcon,
+  ArrowBackIcon,
+  ArrowBackDoubleIcon,
 };

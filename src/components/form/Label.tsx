@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import "@styles/input.css";
 
 type LabelProps = {
   htmlFor?: string;

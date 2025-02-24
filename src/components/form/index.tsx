@@ -1,3 +1,4 @@
+import ErrorMessage from "./errorMessage";
 import Checkbox from "./Checkbox";
 import Form from "./Form";
 import Input from "./Input";
@@ -7,4 +8,5 @@ import Label from "./Label";
 import Radio from "./Radio";
 import SearchInput from "./SearchInput";
 
-export { Checkbox, Form, Input, InputField, InputMessage, Label, Radio, SearchInput };
+export { Checkbox, Form, Input, InputField, InputMessage, ErrorMessage, Label, Radio, SearchInput };
+

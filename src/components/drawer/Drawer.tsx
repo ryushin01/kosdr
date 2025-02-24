@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { DrawerHeader, DrawerContent, DrawerFooter } from "@components/drawer";
+import "@styles/drawer.css";
 
 type DrawerProps = {
   onClose: () => void;

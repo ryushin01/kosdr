@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowUpIcon, ArrowDownIcon } from "@icons";
+import "@styles/accordion.css";
 
 type AccordionProps = {
   id: number,

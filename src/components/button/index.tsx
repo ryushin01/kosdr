@@ -1,5 +1,5 @@
 import GuideButton from "@components/button/GuideButton";
-import TextButton from "@components/button/TextButton";
+import Button from "@components/button/Button";
 import IconButton from "@components/button/IconButton";
 
-export { GuideButton, TextButton, IconButton };
+export { GuideButton, Button, IconButton };

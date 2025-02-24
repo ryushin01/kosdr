@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SpinnerImage } from "@images";
+import "@styles/spinner.css";
 
 /**
  * @name Spinner

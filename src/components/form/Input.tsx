@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes } from "react";
+import "@styles/input.css";
 
 type InputProps = {
   id?: string;
@@ -13,7 +14,6 @@ type InputProps = {
   onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   isError?: boolean;
-  isFocus?: boolean;
   name: string;
   defaultValue: string;
   //   color: "neutral" | "primary" | "secondary";
@@ -36,9 +36,8 @@ type InputProps = {
  * @property {function} onBlur     - 인풋 포커스 해제시 포커스시 동작을 위해 정의합니다.
  * @property {string} placeholder  - 인풋의 힌트 텍스트를 정의합니다.
  * @property {boolean} isError     - 인풋의 에러 상태를 정의합니다.
- * @property {boolean} isFocus     - 인풋의 포커스 상태를 정의합니다.
  * @property {string} name         - 인풋의 이름을 정의합니다.
- * @property {string} defaultValue        - 인풋에 입력된 값을 정의합니다.
+ * @property {string} defaultValue - 인풋에 입력된 값을 정의합니다.
  */
 export default function Input({
   id,
@@ -53,10 +52,9 @@ export default function Input({
   name,
   defaultValue,
   isError,
-  // isFocus,
   ...props
 }: InputProps) {
-  const className = `_text-input ${
+  const className = `_text-input ${disabled ? "_disable" : ""} ${
     shape === "lg" ? "rounded-lg" : "rounded-3xl"
   } ${isError ? "border-koser-secondary-red-50" : "border-koser-grayscale-40"}`;
   return (
@@ -65,6 +63,7 @@ export default function Input({
       id={id}
       required={required}
       disabled={disabled}
+      readOnly={disabled}
       placeholder={placeholder}
       className={className}
       name={name}
