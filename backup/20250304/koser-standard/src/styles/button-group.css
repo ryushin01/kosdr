@@ -1,0 +1,31 @@
+._button-group {
+    @apply flex;
+
+    /* TODO: 임시값 */
+
+    button {
+        padding: 10px 20px;
+        border: 4px red solid;
+
+        & + button {
+            margin-left: -4px;
+        }
+
+        &:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        &:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        &._selected {
+
+        }
+
+        &[disabled] {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    }
+}
